@@ -1,0 +1,30 @@
+#
+# editors
+*~
+
+# vim
+*.swp
+
+# visual studio code
+.vscode/
+
+# joe
+DEADJOE
+
+# intellij
+.idea/
+
+#
+# platform binaries and intermediates
+*.a
+*.so
+*.o
+
+# windows
+*.exe
+*.dll
+*.lib
+
+# apple
+*.app
+*.dylib
