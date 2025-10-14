@@ -9,3 +9,6 @@ alias gpl="git pull --rebase"
 alias gplm="git pull"
 alias gps="git push" 
 alias gpfwl="git push --force-with-lease"
+
+# aur
+aurpull() { git clone https://aur.archlinux.org/"$1".git "~/Downloads/$1"; }
