@@ -1,3 +1,3 @@
 # rust/cargo
 
-test -d "$HOME/.cargo" && source "$HOME/.cargo/env"
+test -f "$HOME/.cargo/env" && source "$HOME/.cargo/env"
