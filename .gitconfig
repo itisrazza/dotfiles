@@ -1,0 +1,9 @@
+[user]
+	name = Raresh Nistor
+	email = raresh@nistor.email
+
+[init]
+	defaultBranch = main
+
+[core]
+	excludesFile = ~/.config/git/ignore
