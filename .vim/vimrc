@@ -1,0 +1,4 @@
+source $VIMRUNTIME/defaults.vim
+
+:set number relativenumber " enable line numbers
+
