@@ -28,3 +28,13 @@ DEADJOE
 # apple
 *.app
 *.dylib
+
+# macos
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+__MACOSX
+
+# claude code
+**/.claude/settings.local.json
