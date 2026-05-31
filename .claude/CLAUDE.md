@@ -92,6 +92,8 @@ Unless in conflict with a project's code style, follow these guidelines (from ht
 ## Git and commits
 
 - Default to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) unless the project specifies otherwise. Use scope on larger projects; omit it on smaller ones.
+- Do not add `Co-Authored-By` trailers to commits.
+- When adding a `Co-Authored-By` trailer, it refers to Claude — never to Rareș, who is the author.
 
 ## Package and dependency management
 
