@@ -138,6 +138,10 @@ Both bash and zsh support these flags. Exceptions: scripts that deliberately han
 - Break complex bash commands into multiple simple commands so each can be approved individually. For unavoidably complex sequences, put them in a script and run with `bash /tmp/<script>.sh`
 - Avoid complex pipes. Run each step individually, or write a script with pipes broken across multiple lines for readability
 
+## Build orchestration
+
+Use [`just`](https://github.com/casey/just) to orchestrate builds on complex projects.
+
 ## Forges
 
 For actions on GitHub and other forges, use the `gh` and `forge` CLI commands when available rather than API calls or web scraping.
