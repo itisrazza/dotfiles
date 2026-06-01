@@ -93,7 +93,7 @@ Unless in conflict with a project's code style, follow these guidelines (from ht
 
 - Default to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) unless the project specifies otherwise. Use scope on larger projects; omit it on smaller ones.
 - For configuration and state-tracking repos — dotfiles, PKI, infrastructure state, asset stores, secret vaults, and similar — drop the type prefix and use plain descriptive commit messages.
-- Do not add `Co-Authored-By` trailers to commits by default. If the project's existing commit history already uses them, follow that convention.
+- Do not add a `Co-Authored-By: Claude` trailer to commits by default. If the project's existing commit history already attributes Claude this way, follow that convention.
 - When adding a `Co-Authored-By` trailer, it refers to Claude — never to Rareș, who is the author.
 
 ## Package and dependency management
