@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+# dfsync - sync dotfile repos
+
+set -euo pipefail
+
+DOTFILES_COMMON="${DOTFILES_COMMON:-$HOME/src/itisrazza/dotfiles/common}"
+DOTFILES_PLATFORM="${DOTFILES_PLATFORM:-$HOME/src/itisrazza/dotfiles/platform}"
+DOTFILES_SECRET="${DOTFILES_SECRET:-$HOME/src/itisrazza/dotfiles/secret}"
+
+sync_repo() {
+  local name=$1
+  local dir=$2
+
+  if [ ! -d "$dir" ]; then
+    echo "  $name: not found, skipping"
+    return
+  fi
+
+  echo "  $name"
+  git --git-dir="$dir" --work-tree="$HOME" pull
+  git --git-dir="$dir" --work-tree="$HOME" push
+}
+
+echo "Syncing dotfiles..."
+sync_repo "common"   "$DOTFILES_COMMON"
+sync_repo "platform" "$DOTFILES_PLATFORM"
+sync_repo "secret"   "$DOTFILES_SECRET"
