@@ -5,7 +5,9 @@ return {
     options = {
       icons_enabled = false,
       theme = "codedark",
-      component_separators = { left = "", right = "" },
+
+      section_separators = "",
+      component_separators = "",
     },
   },
 }
