@@ -36,5 +36,10 @@ DEADJOE
 .Trashes
 __MACOSX
 
+# ssh keys
+.ssh/id_*
+.ssh/identities/
+.ssh/*.pem
+
 # claude code
 **/.claude/settings.local.json
