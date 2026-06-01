@@ -7,21 +7,27 @@ DOTFILES_COMMON="${DOTFILES_COMMON:-$HOME/src/itisrazza/dotfiles/common}"
 DOTFILES_PLATFORM="${DOTFILES_PLATFORM:-$HOME/src/itisrazza/dotfiles/platform}"
 DOTFILES_SECRET="${DOTFILES_SECRET:-$HOME/src/itisrazza/dotfiles/secret}"
 
+# colours
+bold=$'\e[1m'
+cyan=$'\e[36m'
+yellow=$'\e[33m'
+reset=$'\e[0m'
+
 sync_repo() {
   local name=$1
   local dir=$2
 
   if [ ! -d "$dir" ]; then
-    echo "  $name: not found, skipping"
+    echo "  ${yellow}${name}: not found, skipping${reset}"
     return
   fi
 
-  echo "  $name"
+  echo "\n${bold}${cyan}:: ${name}${reset}"
   git --git-dir="$dir" --work-tree="$HOME" pull
   git --git-dir="$dir" --work-tree="$HOME" push
 }
 
-echo "Syncing dotfiles..."
+echo "${bold}Syncing dotfiles...${reset}"
 sync_repo "common"   "$DOTFILES_COMMON"
 sync_repo "platform" "$DOTFILES_PLATFORM"
 sync_repo "secret"   "$DOTFILES_SECRET"
