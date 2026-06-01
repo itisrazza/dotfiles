@@ -1,3 +1,3 @@
 require("options")
 require("platform")
-require("plugins")
+require("config.lazy")
