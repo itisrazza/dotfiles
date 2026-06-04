@@ -1,6 +1,8 @@
 font-family = Input Mono Narrow
+font-size = 9.5
 
 theme = Dark Modern
+background = #111111
 
 window-width = 80
 window-height = 25
