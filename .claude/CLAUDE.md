@@ -100,6 +100,14 @@ Unless in conflict with a project's code style, follow these guidelines (from ht
 - Prefer stdlib and lightweight alternatives before reaching for heavy dependencies
 - Install dependencies in project environments, not globally; always add them to the project config files (e.g. `package.json`, `pyproject.toml`, `Cargo.toml`). Use modern package management files where applicable.
 
+## Licences
+
+When retrieving or editing software licences, you must download a plain text copy from an authoritative source.
+
+If you can't find such source that is easy to curl or wget. You may also try the `reuse download` command with the SPDX identifier.
+
+NEVER generate licence text yourself.
+
 ---
 
 ## Security
