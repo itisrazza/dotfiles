@@ -27,6 +27,18 @@ sync_repo() {
   git --git-dir="$dir" --work-tree="$HOME" push
 }
 
+# Multiplex SSH connections so Secretive only prompts for TouchID once per remote
+SSH_CONTROL_DIR=$(mktemp -d /tmp/dfsync-ssh.XXXXXX)
+export GIT_SSH_COMMAND="ssh -o ControlMaster=auto -o ControlPersist=60 -o ControlPath=$SSH_CONTROL_DIR/%C"
+
+cleanup() {
+  for sock in "$SSH_CONTROL_DIR"/*(N); do
+    [ -S "$sock" ] && ssh -o ControlPath="$sock" -O exit _ 2>/dev/null
+  done
+  rm -rf "$SSH_CONTROL_DIR"
+}
+trap cleanup EXIT INT TERM HUP
+
 echo "${bold}Syncing dotfiles...${reset}"
 sync_repo "common"   "$DOTFILES_COMMON"
 sync_repo "platform" "$DOTFILES_PLATFORM"
