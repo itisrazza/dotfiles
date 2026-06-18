@@ -4,9 +4,16 @@
 [user]
 	name = Raresh Nistor
 	email = raresh@nistor.email
+	signingkey = raresh@nistor.email
 
 [core]
 	exludesFiles = ~/.config/git/ignore
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgsign = true
 
 [url "https://invent.kde.org/"]
 	insteadOf = kde:
